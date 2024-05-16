@@ -30,3 +30,7 @@
 .arrow {
     font-size: 18px;
 }
+
+.arrow-clicked {
+  color: red; /* Define a cor vermelha para a seta */
+}

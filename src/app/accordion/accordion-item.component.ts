@@ -19,8 +19,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition('initial<=>final', animate('250ms'))
     ]),
     trigger('rotatedState', [
-      state('default', style({ transform: 'rotate(0)'})),
-      state('rotated', style({ transform: 'rotate(180deg)'})),
+      state('default', style({ transform: 'rotate(0)' })),
+      state('rotated', style({ transform: 'rotate(180deg)' })),
       transition('default <=> rotated', animate('250ms'))
     ])
   ]
@@ -29,10 +29,28 @@ export class AccordionItemComponent {
 
   @Input() title: string = '';
   showBody = false;
+  isArrowClicked = false;
+
 
   constructor() { }
 
   toggle() {
     this.showBody = !this.showBody;
+    this.isArrowClicked = !this.isArrowClicked;
+  }
+  //   const arr = [1, 5, 3, 9, 2];
+  // const maxValue = this.getMaxValue(arr);
+  // console.log(maxValue); // Output: 9
+
+
+  getMaxValue(arr: number[]): number {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    return max;
   }
 }
+
